@@ -1,0 +1,32 @@
+plugins {
+  id "au.com.dius.pact" version "4.1.17"
+}
+
+apply plugin: 'java'
+
+version = '0.1.0'
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+}
+
+dependencies {
+  implementation 'org.springframework.boot:spring-boot-starter-web-services:2.4.3'
+  implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.4.3'
+  implementation "org.projectlombok:lombok:1.18.22"
+  runtimeOnly 'com.h2database:h2:1.4.200'
+
+  testImplementation 'au.com.dius.pact.provider:junit5spring:4.3.4'
+  testImplementation 'org.hamcrest:hamcrest:2.2'
+  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.1'
+  testImplementation 'org.springframework.boot:spring-boot-starter-test:2.4.3'
+}
+
+test {
+  useJUnitPlatform()
+
+  systemProperty 'pactbroker.auth.token', System.getenv('PACT_BROKER_TOKEN')
+  systemProperty 'pact.provider.version', '1.0.0'
+  systemProperty 'pact.verifier.publishResults', true
+}
