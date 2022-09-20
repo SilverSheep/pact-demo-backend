@@ -1,5 +1,5 @@
 pactbroker:
-  host: <<PACT_BROKER_URL>>
+  host: silversheep.pactflow.io
   port: 443
   scheme: https
   

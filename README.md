@@ -16,7 +16,7 @@ The important files in this project:
 
 ## Running the tests in your CI
 
-Before running test - replace <<PACT_BROKER_URL>> in `application.yml` with valid pact broker's url
+Before running test - replace <<PACT_BROKER_URL>> in `test/resources/application.yml` with valid pact broker's url (exp: `my.pactflow.io`)
 
 When running in your CI, you should enable publishing of verification results by setting the JVM system
 properties `pact.provider.version`, `pact.provider.tag` and `pact.verifier.publishResults`.
