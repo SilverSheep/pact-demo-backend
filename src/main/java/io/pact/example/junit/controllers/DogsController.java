@@ -22,8 +22,8 @@ public class DogsController {
      return dogRepository.findAll();
   }
 
-  @GetMapping(value = "/dogs/{name}", produces = "application/json")
-  public Dog dogById(@PathVariable("name") String name) {
-    return dogRepository.findByName(name).orElseThrow(DogNotFoundException::new);
+  @GetMapping(value = "/dogs/{id}", produces = "application/json")
+  public Dog dogById(@PathVariable("id") Long id) {
+    return dogRepository.findById(id).orElseThrow(DogNotFoundException::new);
   }
 }

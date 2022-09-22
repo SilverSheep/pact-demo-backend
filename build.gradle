@@ -1,7 +1,3 @@
-plugins {
-  id "au.com.dius.pact" version "4.1.17"
-}
-
 apply plugin: 'java'
 
 version = '0.1.0'
@@ -27,6 +23,6 @@ test {
   useJUnitPlatform()
 
   systemProperty 'pactbroker.auth.token', System.getenv('PACT_BROKER_TOKEN')
-  systemProperty 'pact.provider.version', '1.0.0'
+  systemProperty 'pact.provider.version', '1.0.1'
   systemProperty 'pact.verifier.publishResults', true
 }
